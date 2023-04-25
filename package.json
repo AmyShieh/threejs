@@ -1,0 +1,19 @@
+{
+  "name": "threejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AmyShieh/threejs.git",
+  "author": "aliveAmy <aliveAmy719@gmail.com>",
+  "license": "MIT",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "three": "^0.151.3"
+  }
+}
