@@ -559,6 +559,20 @@ function hmrAccept(bundle, id) {
 },{}],"b4YkQ":[function(require,module,exports) {
 var _three = require("three");
 console.log(_three);
+const scene = new _three.Scene();
+const camera = new _three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 10);
+scene.add(camera);
+const geometry = new _three.BoxGeometry(1, 1, 1);
+const material = new _three.MeshBasicMaterial({
+    color: 0xffff00
+});
+const mesh = new _three.Mesh(geometry, material);
+scene.add(mesh);
+const renderer = new _three.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+renderer.render(scene, camera);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 /**
