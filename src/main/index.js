@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 console.log(THREE)
 
@@ -21,6 +22,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
-renderer.render(scene, camera)
+const controls = new OrbitControls(camera, renderer.domElement);
 
+const render = (e) => {
+    // console.log(e)
+    renderer.render(scene, camera);
+    window.requestAnimationFrame(render)
+}
+
+render();
 
