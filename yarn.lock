@@ -994,6 +994,11 @@ globals@^13.2.0:
   dependencies:
     type-fest "^0.20.2"
 
+gsap@^3.11.5:
+  version "3.11.5"
+  resolved "http://npm-registry.qunhequnhe.com/gsap/-/gsap-3.11.5.tgz#97ef65091f43868be387803f9db277e8cd5bd041"
+  integrity sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "http://npm-registry.qunhequnhe.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
