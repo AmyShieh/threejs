@@ -43,6 +43,15 @@ window.addEventListener('dblclick', () => {
     } else {
         animation.resume();
     }
+
+    console.log(document.fullscreenElement);
+
+    if(!document.fullscreenElement) {
+        renderer.domElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+
 })
 
 const render = (e) => {
@@ -63,4 +72,12 @@ render();
 
 const axesHelper = new THREE.AxesHelper(7);
 scene.add(axesHelper);
+
+window.addEventListener('resize', () => {
+    console.log('resize');
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+})
 
