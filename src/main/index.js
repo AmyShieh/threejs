@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
+import * as dat from "dat.gui";
 console.log(THREE)
 
 
@@ -14,6 +15,23 @@ scene.add(camera);
 const geometry = new THREE.BoxGeometry(1,1,1);
 const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
 const cube = new THREE.Mesh(geometry, material);
+
+const gui = new dat.GUI();
+
+const params = {
+    color: '#ffff00'
+}
+
+gui.add(cube, 'visible').name("royroy展示");
+gui.addColor(params, 'color').onChange((v) => {
+    console.log(v);
+    cube.material.color.set(v)
+})
+
+const folder = gui.addFolder("文件夹");
+folder.add(cube.material, "wireframe")
+
+gui.add(cube.material, "wireframe")
 
 scene.add(cube);
 
