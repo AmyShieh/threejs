@@ -35,6 +35,8 @@ const material = new THREE.MeshStandardMaterial({
 const cube = new THREE.Mesh(geometry, material)
 scene.add(cube);
 
+// cube.material.color.setRGB(2.607843,2.431373,2.254902);
+// cube.material.color.setRGB(0.6039215686274509,0.43137254901960786,0.24705882352941178);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
 scene.add(ambientLight)
