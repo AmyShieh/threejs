@@ -8,7 +8,6 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 const rgbeLoader = new RGBELoader();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
 
 // scene.add(camera);
 //
@@ -27,34 +26,27 @@ renderer.shadowMap.enabled = true;
 // });
 //
 const geometry = new THREE.SphereGeometry(1,20,20);
-const material = new THREE.MeshStandardMaterial()
-const cube = new THREE.Mesh(geometry, material);
-cube.castShadow = true;
+const material = new THREE.MeshStandardMaterial({
+    roughness: 0.7,
+    metalness: 0.1,
+    // envMap: envMapTexture
+})
+
+const cube = new THREE.Mesh(geometry, material)
 scene.add(cube);
-
-
-const planeGeometry = new THREE.PlaneBufferGeometry(10, 10);
-const plane = new THREE.Mesh(planeGeometry, material)
-plane.position.set(0,-1,0);
-plane.rotation.x = -Math.PI / 2;
-plane.receiveShadow = true;
-scene.add(plane);
-
 
 // cube.material.color.setRGB(2.607843,2.431373,2.254902);
 // cube.material.color.setRGB(0.6039215686274509,0.43137254901960786,0.24705882352941178);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
-directionalLight.position.set(10,10,10)
-directionalLight.castShadow = true;
 scene.add(ambientLight)
 scene.add(directionalLight)
-//
-// rgbeLoader.loadAsync('01.hdr').then((texture) => {
-//     texture.mapping = THREE.EquirectangularReflectionMapping;
-//     scene.background = texture;
-//     scene.environment = texture;
-// })
+
+rgbeLoader.loadAsync('01.hdr').then((texture) => {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.background = texture;
+    scene.environment = texture;
+})
 
 // scene.background = envMapTexture;
 
