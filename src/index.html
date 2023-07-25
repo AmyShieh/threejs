@@ -8,10 +8,31 @@
     <title>Document</title>
     <meta name="referrer" content="no-referrer" />
     <link rel="stylesheet" href="./style/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/3.4.2/gl-matrix-min.js" integrity="sha512-eV9ExyTa3b+YHr99IBTYpwk4wbgDMDlfW8uTxhywO8dWb810fGUSKDgHhEv1fAqmJT4jyYnt1iWWMW4FRxeQOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const webgl = canvas.getContext('webgl');
+        function init() {
+            initWebgl();
+            initShader();
+            initBuffer();
+            draw();
+        }
+        function initWebgl() {
+
+        }
+        function initShader() {
+
+        }
+        function initBuffer() {
+
+        }
+        function draw() {
+
+        }
+    </script>
 </head>
 <body>
-
-
-<script src="./main/index.js" type="module"></script>
+<canvas id="canvas" width="500" height="500" style="background: pink"></canvas>
 </body>
 </html>
