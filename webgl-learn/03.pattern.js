@@ -4,7 +4,7 @@ import Stats from  'three/addon/libs/stats.module.js'
 
 const stats = new Stats();
 console.log(stats);
-document.body.appendChild(stats.domElement);
+// document.body.appendChild(stats.domElement);
 
 const scene = new THREE.Scene();
 

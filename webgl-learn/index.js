@@ -1,3 +1,4 @@
+import './07.geometry.js'
 import './01.basic.js'
 import './02.light.js'
 import './03.pattern.js'

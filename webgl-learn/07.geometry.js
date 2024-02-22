@@ -1,32 +1,15 @@
 import * as THREE from 'three';
 import {OrbitControls} from  'three/addon/controls/OrbitControls.js'
 
+import pointsModel from './geometry/pointModel.js';
 
 const scene = new THREE.Scene();
 
-// 给场景添加geometry： 几何体。
-
-const geometry = new THREE.BoxGeometry(100, 100, 100);
-
-// 给几何体添加外观效果material: 材质。
-
-const material =  new THREE.MeshBasicMaterial({ color: 0xff3e97, transparent: true, opacity: 0.5 })
-
-// 给场景添加物体Mesh: 几何体Geometry & 材质Material的结合——网格模型
-
-const mesh  = new THREE.Mesh(geometry, material)
-
-// 定义物体的位置
-mesh.position.set(0, 0, 0)
-
 // 把物体添加至场景中
-scene.add(mesh);
+scene.add(pointsModel);
 
 const axesHelper = new THREE.AxesHelper(200);
 scene.add(axesHelper);
-
-console.log('xiyu', {scene, mesh});
-
 
 // 创建一个相机
 const width = 800;
@@ -55,6 +38,11 @@ renderer.render(scene, camera);
 
 document.body.appendChild(renderer.domElement);
 
+const pTag = document.createElement("p");
+pTag.innerHTML = '07. Point Geometry';
+document.body.appendChild(pTag);
+document.body.appendChild(renderer.domElement);
+
 // orbit：改变相机，监控范围
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -63,11 +51,6 @@ const controls = new OrbitControls(camera, renderer.domElement);
 //     renderer.render(scene, camera);
 //     console.log(camera)
 // })
-
-const pTag = document.createElement("p");
-pTag.innerHTML = '01. basic';
-document.body.appendChild(pTag);
-document.body.appendChild(renderer.domElement);
 
 const render = () => {
     renderer.render(scene, camera);

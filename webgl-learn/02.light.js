@@ -4,7 +4,7 @@ import Stats from  'three/addon/libs/stats.module.js'
 
 const stats = new Stats();
 console.log(stats);
-document.body.appendChild(stats.domElement);
+// document.body.appendChild(stats.domElement);
 
 const scene = new THREE.Scene();
 
@@ -106,8 +106,6 @@ scene.add(directionLightHelper)
 const axesHelper = new THREE.AxesHelper(200);
 scene.add(axesHelper);
 
-console.log('xiyu', {scene, mesh});
-
 
 // 创建一个相机
 const width = 800;
@@ -136,9 +134,8 @@ renderer.render(scene, camera);
 
 // document.body.appendChild('这里是Light');
 
-console.log(renderer.domElement);
 const pTag = document.createElement("p");
-pTag.innerHTML = '这里是light';
+pTag.innerHTML = '02.这里是light, gui相关的就在这里';
 document.body.appendChild(pTag);
 document.body.appendChild(renderer.domElement);
 
@@ -150,7 +147,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // })
 
 const render = () => {
-    stats.update();
+    // stats.update();
     if(obj.bool) {
         mesh.rotateY(0.01);
         mesh.rotateX(0.01);
