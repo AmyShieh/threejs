@@ -2,11 +2,14 @@ import * as THREE from 'three';
 import {OrbitControls} from  'three/addon/controls/OrbitControls.js'
 
 import pointsModel from './geometry/pointModel.js';
+import LineModel from './geometry/lineModel.js';
 
 const scene = new THREE.Scene();
 
 // 把物体添加至场景中
 scene.add(pointsModel);
+
+scene.add(LineModel)
 
 const axesHelper = new THREE.AxesHelper(200);
 scene.add(axesHelper);
@@ -39,7 +42,7 @@ renderer.render(scene, camera);
 document.body.appendChild(renderer.domElement);
 
 const pTag = document.createElement("p");
-pTag.innerHTML = '07. Point Geometry';
+pTag.innerHTML = '07. Buffer Geometry';
 document.body.appendChild(pTag);
 document.body.appendChild(renderer.domElement);
 
