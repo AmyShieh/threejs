@@ -1,3 +1,5 @@
+import './09.mesh-square-geometry.js'
+import './08.mesh-geometry.js'
 import './07.geometry.js'
 import './01.basic.js'
 import './02.light.js'
