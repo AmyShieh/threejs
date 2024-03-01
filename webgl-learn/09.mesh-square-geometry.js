@@ -14,6 +14,10 @@ scene.add(MeshSquareModel);
 const axesHelper = new THREE.AxesHelper(200);
 scene.add(axesHelper);
 
+const ambientLight =  new THREE.AmbientLight(0xffffff, 1.0);
+scene.add(ambientLight)
+
+
 // 创建一个相机
 const width = 800;
 const height = 500;
@@ -22,7 +26,7 @@ const camera = new THREE.PerspectiveCamera(30, width / height, 0.1, 3000);
 
 // 设置相机位置
 
-camera.position.set(200, 200, 200);
+camera.position.set(0, 40, 200);
 // camera.position.set(-1000, 0, 0);
 
 // 设置相机的视线方向： 两个点构成一条线
