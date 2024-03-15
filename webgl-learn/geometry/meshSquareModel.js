@@ -42,7 +42,8 @@ geometry.index = indexAttrbute;
 
 const material = new THREE.MeshLambertMaterial({
     color: 0X00ffff,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
+    wireframe: true
 })
 
 const model = new THREE.Mesh(geometry, material);
