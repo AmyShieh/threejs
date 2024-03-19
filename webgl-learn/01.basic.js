@@ -10,7 +10,7 @@ const geometry = new THREE.BoxGeometry(100, 100, 100);
 
 // 给几何体添加外观效果material: 材质。
 
-const material =  new THREE.MeshBasicMaterial({ color: 0xff3e97, transparent: true, opacity: 0.5 })
+const material =  new THREE.MeshBasicMaterial({ color: 0xff3e97, transparent: false, opacity: 0.5 })
 
 // 给场景添加物体Mesh: 几何体Geometry & 材质Material的结合——网格模型
 
@@ -21,6 +21,10 @@ mesh.position.set(0, 0, 0)
 
 // 把物体添加至场景中
 scene.add(mesh);
+
+// const euler = new THREE.Euler(0, Math.PI / 4, 0);
+// console.log(euler, mesh.rotation)
+mesh.rotation.y = Math.PI / 10;
 
 const axesHelper = new THREE.AxesHelper(200);
 scene.add(axesHelper);

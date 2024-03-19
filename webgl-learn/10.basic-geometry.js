@@ -70,7 +70,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const render = () => {
     renderer.render(scene, camera);
-    window.requestAnimationFrame(render)
+    window.requestAnimationFrame(render);
+    mesh.rotateY(0.01);
 }
 
 render();
