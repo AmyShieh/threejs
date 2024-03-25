@@ -16,8 +16,15 @@ const material = new THREE.MeshBasicMaterial({
 
 const mesh = new THREE.Mesh(geometry, material);
 
+const mesh2 = mesh.clone();
 
-scene.add(mesh);
+mesh2.position.y += 100;
+
+
+mesh2.material = mesh.material.clone();
+mesh2.material.color.set(0xffffff);
+
+scene.add(mesh, mesh2);
 
 
 const axesHelper = new THREE.AxesHelper(200);
@@ -35,7 +42,7 @@ const camera = new THREE.PerspectiveCamera(30, width / height, 0.1, 3000);
 
 // 设置相机位置
 
-camera.position.set(0, 40, 200);
+camera.position.set(0, 400, 200);
 // camera.position.set(-1000, 0, 0);
 
 // 设置相机的视线方向： 两个点构成一条线
@@ -70,6 +77,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const render = () => {
     renderer.render(scene, camera);
+    mesh2.rotation.copy(mesh.rotation);
     window.requestAnimationFrame(render);
     mesh.rotateY(0.01);
 }
