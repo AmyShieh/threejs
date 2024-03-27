@@ -1,3 +1,4 @@
+import './11.group.js'
 import './10.basic-geometry.js'
 import './09.mesh-square-geometry.js'
 import './08.mesh-geometry.js'
